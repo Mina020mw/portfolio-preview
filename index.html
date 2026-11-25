@@ -49,25 +49,29 @@ border-radius:999px;padding:5px 12px;font-size:.78rem;color:var(--muted)}
 
 /* hero */
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
-.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;z-index:-2}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;z-index:-2;transform:scale(1.03)}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;
 background:linear-gradient(180deg,rgba(8,9,18,.45) 0%,rgba(8,9,18,.15) 34%,rgba(8,9,18,.62) 68%,var(--bg) 100%),
 radial-gradient(90% 60% at 18% 82%,rgba(143,124,255,.16),transparent 60%)}
 .hero-in{width:100%;padding:0 22px calc(46px + env(safe-area-inset-bottom,0px));max-width:1180px;margin:0 auto}
-.kicker{display:inline-flex;align-items:center;gap:9px;color:var(--text);font:600 .8rem/1 "Space Grotesk",sans-serif;
+.kicker{display:inline-flex;align-items:center;gap:9px;color:var(--amber);font:600 .8rem/1 "Space Grotesk",sans-serif;
 letter-spacing:.24em;text-transform:uppercase;margin-bottom:16px}
-.kicker::before{content:"";width:26px;height:2px;background:var(--text)}
+.kicker::before{content:"";width:26px;height:2px;background:var(--amber)}
 /* name: the hero video carries the baked-in MINA WAEL typography on wide screens;
    on narrow screens the crop hides it, so the stacked name becomes visible */
 h1.name{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;
 font-weight:700;letter-spacing:-.02em;text-transform:uppercase}
 h1.name .row{display:block}
-h1.name .out{color:var(--text)}
+h1.name .out{color:transparent;-webkit-text-stroke:2px var(--text)}
 @media(max-width:560px){
-.hero{display:flex;align-items:flex-end;min-height:62svh}
-.hero video,.hero .poster{position:absolute;inset:0 auto auto 0;width:100%;height:auto;display:block;-webkit-mask-image:linear-gradient(180deg,#000 62%,transparent 99%);mask-image:linear-gradient(180deg,#000 62%,transparent 99%)}
-.hero::after{background:linear-gradient(180deg,rgba(8,9,18,.45) 0%,rgba(8,9,18,0) 26%,rgba(8,9,18,0) 100%)}
-.hero-in{padding:20px 22px calc(20px + env(safe-area-inset-bottom,0px))}
+.hero video,.hero .poster{object-position:50% 24%}
+.hero::after{background:linear-gradient(180deg,rgba(8,9,18,.5) 0%,rgba(8,9,18,.3) 30%,rgba(8,9,18,.78) 66%,var(--bg) 100%),
+radial-gradient(90% 60% at 18% 82%,rgba(143,124,255,.16),transparent 60%)}
+h1.name{position:static;width:auto;height:auto;overflow:visible;clip:auto;white-space:normal;
+font-size:clamp(2rem,10.5vw,3rem);margin-bottom:8px}
+h1.name .row{display:inline}
+h1.name .out{-webkit-text-stroke:1.2px var(--text)}
+.hero-in{padding-bottom:calc(20px + env(safe-area-inset-bottom,0px))}
 .kicker{margin-bottom:10px}
 .tag{margin-top:8px;font-size:.98rem}
 .cta{margin-top:12px}
