@@ -221,7 +221,6 @@ main,footer{position:relative;z-index:1}
 <div class="scroll-cue">Scroll</div>
 </header>
 
-<div class="marquee" aria-hidden="true"><div class="track" id="mq"></div></div>
 
 <section id="work"><div class="wrap">
 <div class="sec-head">
@@ -294,8 +293,6 @@ const WORKS=[
 {cat:"Events",title:"حانا التخرج حانا",yt:"tz64quyV-WY"}
 ];
 
-// marquee
-(function(){const t=document.getElementById("mq");let s="";for(let r=0;r<2;r++)CATS.forEach(c=>{s+="<span>"+c+"</span><b>✦</b>"});t.innerHTML=s})();
 
 let active="All";
 const grid=document.getElementById("grid"),chips=document.getElementById("chips"),
